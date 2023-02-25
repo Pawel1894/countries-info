@@ -1,12 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Nunito_Sans } from "next/font/google";
-
-const nunito = Nunito_Sans({
-  weight: ["300", "600", "800"],
-  subsets: ["latin"],
-  variable: "--font-nunito",
-});
 
 export default function Home() {
   return (
@@ -17,7 +9,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={`${nunito.variable} font-sans`}></main>
+      <div></div>
     </>
   );
 }
