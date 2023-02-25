@@ -1,6 +1,23 @@
+import { getAllCountries } from "@/lib/restcountries";
+import { Country } from "@/types/country";
 import Head from "next/head";
+import { useState } from "react";
 
-export default function Home() {
+export async function getStaticProps() {
+  const data = await getAllCountries();
+
+  return {
+    props: { data },
+  };
+}
+
+type Props = {
+  data: Country[];
+};
+
+export default function Home({ data }: Props) {
+  const [countries, setCountries] = useState(data);
+
   return (
     <>
       <Head>
