@@ -1,10 +1,21 @@
 import { NextFontWithVariable } from "next/dist/compiled/@next/font";
+import Link from "next/link";
 import React from "react";
+import ThemeToggle from "./ThemeToggle";
 
 type Props = {
   font: NextFontWithVariable;
 };
 
 export default function Heading({ font }: Props) {
-  return <div className={`${font.variable} font-sans`}>Header</div>;
+  return (
+    <header
+      className={`${font.variable} font-sans flex justify-between px-4 py-[1.875rem] dark:bg-neutral-100 lg:px-20 lg:py-6`}
+    >
+      <h1 className="font-extrabold text-sm text-neutral-300 dark:text-white">
+        <Link href={"/"}>Where in the world?</Link>
+      </h1>
+      <ThemeToggle />
+    </header>
+  );
 }
