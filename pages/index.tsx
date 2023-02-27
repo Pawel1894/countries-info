@@ -29,6 +29,7 @@ export default function Home({ data }: Props) {
 
   const filterCountries = useCallback(
     async function filterCountries(region: string | null, search: string) {
+      setIsLoading(true);
       if (!region && !search) return;
 
       if (region) {
@@ -51,12 +52,9 @@ export default function Home({ data }: Props) {
   );
 
   useEffect(() => {
-    setIsLoading(true);
     if (!debounceTerm && !region) setCountries(data);
     else filterCountries(region, debounceTerm);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 500);
+    setIsLoading(false);
   }, [debounceTerm, data, region, filterCountries]);
 
   function filterCountriesByName(items: TCountry[], search: string) {
@@ -79,24 +77,28 @@ export default function Home({ data }: Props) {
         <SearchCountry searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Filter region={region} setRegion={setRegion} />
       </div>
-      <div className="mx-auto px-4 2xl:px-0 max-w-[88rem] h-[calc(100vh-17.0625rem)] lg:h-[calc(100vh-11.4375rem)] xl:justify-items-start grid justify-items-center  gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-y-auto">
-        {isLoading ? (
+      {isLoading ? (
+        <div className="w-screen flex justify-center items-center h-[calc(100vh-17.0625rem)] lg:h-[calc(100vh-11.4375rem)]">
           <LoadIndicator />
-        ) : countries?.length ? (
-          countries.map((country) => {
-            return (
-              <CountryCard
-                key={country.name.official}
-                capital={country.capital}
-                name={country.name}
-                population={country.population}
-                region={country.region}
-                flag={country.flags.svg}
-              />
-            );
-          })
-        ) : null}
-      </div>
+        </div>
+      ) : (
+        <div className="mx-auto px-4 2xl:px-0 max-w-[88rem] h-[calc(100vh-17.0625rem)] lg:h-[calc(100vh-11.4375rem)] xl:justify-items-start grid justify-items-center  gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-y-auto scrollbar">
+          {countries?.length
+            ? countries.map((country) => {
+                return (
+                  <CountryCard
+                    key={country.name.official}
+                    capital={country.capital}
+                    name={country.name}
+                    population={country.population}
+                    region={country.region}
+                    flag={country.flags.svg}
+                  />
+                );
+              })
+            : null}
+        </div>
+      )}
     </>
   );
 }

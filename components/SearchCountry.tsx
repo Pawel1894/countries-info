@@ -22,7 +22,7 @@ export default function SearchCountry({ searchTerm, setSearchTerm }: Props) {
         icon={faSearch}
       />
       <input
-        className="w-full pl-[4.625rem] pr-8 py-4 placeholder:text-neutral-700 text-xs rounded-md shadow-sm outline-none text-neutral-300 dark:text-white dark:bg-neutral-100"
+        className="w-full pl-[4.625rem] pr-8 py-4 placeholder:text-neutral-700 text-xs lg:text-sm rounded-md shadow-sm outline-none text-neutral-300 dark:text-white dark:bg-neutral-100"
         placeholder="Search for a country..."
         type={"text"}
         id="search"

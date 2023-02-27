@@ -24,7 +24,7 @@ export default function Filter({ region, setRegion }: Props) {
     <div className="mt-10 w-52 relative lg:mt-0">
       <button
         onClick={toggleList}
-        className="flex items-center justify-between w-full px-6 py-4 bg-white dark:bg-neutral-100 dark:text-white text-xs rounded-md shadow-sm"
+        className="flex items-center justify-between w-full px-4 py-4 bg-white dark:bg-neutral-100 dark:text-white text-xs lg:text-sm rounded-md shadow-sm"
       >
         <span>{region ? region : "Filter by Region"}</span>
         <div className="ml-16 flex items-center gap-4">

@@ -16,7 +16,7 @@ export default function CountryCard({ flag, capital, name, population, region }:
   return (
     <Link
       href={`/${name.common}`}
-      className="block mt-6 mb-12 rounded-md shadow-lg w-[16.5rem] min-h-[21rem] dark:bg-neutral-100 hover:scale-105 transition-transform"
+      className="block mt-6 mb-12 rounded-md shadow-lg w-[16.5rem] min-h-[21rem] h-fit dark:bg-neutral-100 hover:-translate-y-2 transition-transform"
     >
       <div className="relative w-full h-[160px]">
         <Image className="rounded-t-md object-cover" src={flag} alt={`flag of ${name.official}`} fill />
