@@ -1,5 +1,8 @@
+import CountryCard from "@/components/CountryCard";
+import Filter from "@/components/Filter";
+import SearchCountry from "@/components/SearchCountry";
 import { getAllCountries } from "@/lib/restcountries";
-import { Country } from "@/types/country";
+import { TCountry } from "@/types/country";
 import Head from "next/head";
 import { useState } from "react";
 
@@ -12,7 +15,7 @@ export async function getStaticProps() {
 }
 
 type Props = {
-  data: Country[];
+  data: TCountry[];
 };
 
 export default function Home({ data }: Props) {
@@ -26,7 +29,25 @@ export default function Home({ data }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div></div>
+      <div className="pt-6 mb-8 mx-4">
+        <SearchCountry />
+        <Filter />
+      </div>
+      <div className="mx-auto grid justify-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+        {countries?.length &&
+          countries.map((country) => {
+            return (
+              <CountryCard
+                key={country.name.official}
+                capital={country.capital}
+                name={country.name}
+                population={country.population}
+                region={country.region}
+                flag={country.flags.svg}
+              />
+            );
+          })}
+      </div>
     </>
   );
 }

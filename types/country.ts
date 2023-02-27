@@ -1,5 +1,5 @@
-export interface Country {
-  name: Name;
+export interface TCountry {
+  name: TName;
   tld: string[];
   cca2: string;
   ccn3: string;
@@ -8,135 +8,135 @@ export interface Country {
   independent: boolean;
   status: string;
   unMember: boolean;
-  currencies: Currencies;
-  idd: Idd;
+  currencies: TCurrencies;
+  idd: TIdd;
   capital: string[];
   altSpellings: string[];
   region: string;
   subregion: string;
-  languages: Languages;
-  translations: Translations;
+  languages: TLanguages;
+  translations: TTranslations;
   latlng: number[];
   landlocked: boolean;
   borders: string[];
   area: number;
-  demonyms: Demonyms;
+  demonyms: TDemonyms;
   flag: string;
-  maps: Maps;
+  maps: TMaps;
   population: number;
-  gini: Gini;
+  gini: TGini;
   fifa: string;
-  car: Car;
+  car: TCar;
   timezones: string[];
   continents: string[];
-  flags: Flags;
-  coatOfArms: CoatOfArms;
+  flags: TFlags;
+  coatOfArms: TCoatOfArms;
   startOfWeek: string;
-  capitalInfo: CapitalInfo;
-  postalCode: PostalCode;
+  capitalInfo: TCapitalInfo;
+  postalCode: TPostalCode;
 }
 
-export interface PostalCode {
+export interface TPostalCode {
   format: string;
   regex: string;
 }
 
-export interface CapitalInfo {
+export interface TCapitalInfo {
   latlng: number[];
 }
 
-export interface CoatOfArms {
+export interface TCoatOfArms {
   png: string;
   svg: string;
 }
 
-export interface Flags {
+export interface TFlags {
   png: string;
   svg: string;
   alt: string;
 }
 
-export interface Car {
+export interface TCar {
   signs: string[];
   side: string;
 }
 
-export interface Gini {
+export interface TGini {
   "2018": number;
 }
 
-export interface Maps {
+export interface TMaps {
   googleMaps: string;
   openStreetMaps: string;
 }
 
-export interface Demonyms {
-  eng: Eng;
-  fra: Eng;
+export interface TDemonyms {
+  eng: TEng;
+  fra: TEng;
 }
 
-export interface Eng {
+export interface TEng {
   f: string;
   m: string;
 }
 
-export interface Translations {
-  ara: Pol;
-  bre: Pol;
-  ces: Pol;
-  cym: Pol;
-  deu: Pol;
-  est: Pol;
-  fin: Pol;
-  fra: Pol;
-  hrv: Pol;
-  hun: Pol;
-  ita: Pol;
-  jpn: Pol;
-  kor: Pol;
-  nld: Pol;
-  per: Pol;
-  pol: Pol;
-  por: Pol;
-  rus: Pol;
-  slk: Pol;
-  spa: Pol;
-  srp: Pol;
-  swe: Pol;
-  tur: Pol;
-  urd: Pol;
-  zho: Pol;
+export interface TTranslations {
+  ara: TPol;
+  bre: TPol;
+  ces: TPol;
+  cym: TPol;
+  deu: TPol;
+  est: TPol;
+  fin: TPol;
+  fra: TPol;
+  hrv: TPol;
+  hun: TPol;
+  ita: TPol;
+  jpn: TPol;
+  kor: TPol;
+  nld: TPol;
+  per: TPol;
+  pol: TPol;
+  por: TPol;
+  rus: TPol;
+  slk: TPol;
+  spa: TPol;
+  srp: TPol;
+  swe: TPol;
+  tur: TPol;
+  urd: TPol;
+  zho: TPol;
 }
 
-export interface Languages {
+export interface TLanguages {
   pol: string;
 }
 
-export interface Idd {
+export interface TIdd {
   root: string;
   suffixes: string[];
 }
 
-export interface Currencies {
-  PLN: PLN;
+export interface TCurrencies {
+  PLN: TPLN;
 }
 
-export interface PLN {
+export interface TPLN {
   name: string;
   symbol: string;
 }
 
-interface Name {
+export interface TName {
   common: string;
   official: string;
-  nativeName: NativeName;
+  nativeName: TNativeName;
 }
 
-interface NativeName {
-  pol: Pol;
+export interface TNativeName {
+  pol: TPol;
 }
 
-interface Pol {
+export interface TPol {
   official: string;
   common: string;
 }
