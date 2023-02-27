@@ -2,9 +2,16 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
-type Props = {};
+type Props = {
+  searchTerm: string | undefined;
+  setSearchTerm: React.Dispatch<React.SetStateAction<string>>;
+};
 
-export default function SearchCountry({}: Props) {
+export default function SearchCountry({ searchTerm, setSearchTerm }: Props) {
+  function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
+    setSearchTerm(e.target.value);
+  }
+
   return (
     <div className="relative w-full">
       <label className="sr-only" htmlFor="search">
@@ -20,6 +27,8 @@ export default function SearchCountry({}: Props) {
         type={"text"}
         id="search"
         name="search"
+        onChange={onChangeHandler}
+        value={searchTerm}
       />
     </div>
   );
