@@ -13,7 +13,7 @@ export default function SearchCountry({ searchTerm, setSearchTerm }: Props) {
   }
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full lg:w-[30rem]">
       <label className="sr-only" htmlFor="search">
         Search for a country
       </label>

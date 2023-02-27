@@ -21,7 +21,11 @@ module.exports = {
       white: "#fff",
       black: "#000",
     },
-    extend: {},
+    extend: {
+      screens: {
+        "2xl": { raw: "(min-width: 1440px)" },
+      },
+    },
   },
   plugins: [],
 };

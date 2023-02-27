@@ -21,7 +21,7 @@ export default function Filter({ region, setRegion }: Props) {
   }
 
   return (
-    <div className="mt-10 w-52 relative">
+    <div className="mt-10 w-52 relative lg:mt-0">
       <button
         onClick={toggleList}
         className="flex items-center justify-between w-full px-6 py-4 bg-white dark:bg-neutral-100 dark:text-white text-xs rounded-md shadow-sm"

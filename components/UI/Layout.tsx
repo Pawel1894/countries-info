@@ -1,4 +1,3 @@
-// components/layout.js
 import Heading from "@/components/UI/Heading";
 import { Nunito_Sans } from "next/font/google";
 
