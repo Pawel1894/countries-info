@@ -60,7 +60,11 @@ export default function Home({ data }: Props) {
   }, [debounceTerm, data, region, filterCountries]);
 
   function filterCountriesByName(items: TCountry[], search: string) {
-    return items.filter((item) => item.name.official.toLowerCase().includes(search?.toLowerCase()));
+    return items.filter(
+      (item) =>
+        item.name.common.toLowerCase().includes(search?.toLowerCase()) ||
+        item.name.official.toLowerCase().includes(search?.toLowerCase())
+    );
   }
 
   return (
