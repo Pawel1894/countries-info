@@ -75,11 +75,11 @@ export default function Home({ data }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="pt-6 mb-8 mx-4">
+      <div className="pt-6 mb-8 mx-4 sticky">
         <SearchCountry searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Filter region={region} setRegion={setRegion} />
       </div>
-      <div className="mx-auto grid justify-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+      <div className="mx-auto h-[calc(100vh-17.0625rem)] grid justify-items-center gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-y-auto">
         {isLoading ? (
           <LoadIndicator />
         ) : countries?.length ? (
