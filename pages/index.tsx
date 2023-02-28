@@ -82,7 +82,7 @@ export default function Home({ data }: Props) {
           <LoadIndicator />
         </div>
       ) : (
-        <div className="mx-auto px-4 2xl:px-0 max-w-[88rem] h-[calc(100vh-17.0625rem)] lg:h-[calc(100vh-11.4375rem)] xl:justify-items-start grid justify-items-center  gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-y-auto scrollbar">
+        <div className="mx-auto px-4 2xl:px-0 max-w-[88rem] h-[calc(100vh-17.5rem)] lg:h-[calc(100vh-12rem)] xl:justify-items-start grid justify-items-center  gap-10 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 overflow-y-auto scrollbar">
           {countries?.length
             ? countries.map((country) => {
                 return (

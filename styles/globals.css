@@ -5,30 +5,23 @@
 @layer components {
   .scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: gray;
-  }
-
-  .dark.scrollbar::-webkit-scrollbar-track {
-    @apply bg-neutral-100;
-  }
-
-  .dark.scrollbar::-webkit-scrollbar {
-    @apply bg-neutral-200;
-  }
-
-  .dark.scrollbar::-webkit-scrollbar-thumb {
-    background-color: gray;
-  }
-
-  .scrollbar::-webkit-scrollbar-track {
-    background-color: lightgray;
   }
 
   .scrollbar::-webkit-scrollbar {
-    background-color: lightgray;
+    width: 9px;
+    height: 8px;
+    background-color: #f0f0f0;
+  }
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #cdcdcd;
   }
 
-  .scrollbar::-webkit-scrollbar-thumb {
-    background-color: gray;
+  .dark .scrollbar::-webkit-scrollbar {
+    background-color: #1c252e;
+  }
+
+  /* Add a thumb */
+  .dark .scrollbar::-webkit-scrollbar-thumb {
+    background: gray;
   }
 }
