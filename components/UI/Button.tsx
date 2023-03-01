@@ -11,7 +11,7 @@ type Props = {
 export default function BackButton({ onClick, text, icon }: Props) {
   return (
     <button
-      className="bg-white text-neutral-300 font-light rounded-md drop-shadow-3xl text-sm py-2 px-6 flex items-center justify-center gap-2"
+      className="bg-white dark:bg-neutral-100 dark:text-white text-neutral-300 font-light rounded-md drop-shadow-3xl text-sm py-2 px-6 flex items-center justify-center gap-2"
       onClick={onClick}
     >
       {icon ? <FontAwesomeIcon width={12} icon={icon} /> : null}
