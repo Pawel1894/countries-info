@@ -63,7 +63,7 @@ export default function Country(props: TCountry) {
             <li>
               <CountryField label={"Currencies"}>
                 <div>
-                  {props.currencies.map((cur, i) => (
+                  {props.currencies?.map((cur, i) => (
                     <span
                       key={cur.name}
                       className={`text-sm xl:text-base font-light text-neutral-300 dark:text-white`}
@@ -77,7 +77,7 @@ export default function Country(props: TCountry) {
             <li>
               <CountryField label={"Languages"}>
                 <div>
-                  {props.languages.map((lang, i) => (
+                  {props.languages?.map((lang, i) => (
                     <span
                       key={lang.iso639_1}
                       className={`text-sm xl:text-base font-light text-neutral-300 dark:text-white`}
