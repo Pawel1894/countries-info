@@ -16,7 +16,7 @@ export default function Layout({ children }: Props) {
     <>
       <Heading font={nunito} />
       <main
-        className={`${nunito.variable} font-sans bg-neutral-500 dark:bg-neutral-200 min-h-[calc(100vh-5rem)]`}
+        className={`${nunito.variable} font-sans bg-neutral-500 dark:bg-neutral-200 min-h-[calc(100vh-5rem)] max-h-[90rem]`}
       >
         {children}
       </main>

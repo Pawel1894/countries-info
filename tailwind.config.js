@@ -25,6 +25,9 @@ module.exports = {
       screens: {
         "2xl": { raw: "(min-width: 1440px)" },
       },
+      dropShadow: {
+        "3xl": "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],

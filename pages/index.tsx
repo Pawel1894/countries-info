@@ -58,11 +58,7 @@ export default function Home({ data }: Props) {
   }, [debounceTerm, data, region, filterCountries]);
 
   function filterCountriesByName(items: TCountry[], search: string) {
-    return items.filter(
-      (item) =>
-        item.name.common.toLowerCase().includes(search?.toLowerCase()) ||
-        item.name.official.toLowerCase().includes(search?.toLowerCase())
-    );
+    return items.filter((item) => item.name.toLowerCase().includes(search?.toLowerCase()));
   }
 
   return (
@@ -87,7 +83,7 @@ export default function Home({ data }: Props) {
             ? countries.map((country) => {
                 return (
                   <CountryCard
-                    key={country.name.official}
+                    key={country.name}
                     capital={country.capital}
                     name={country.name}
                     population={country.population}
