@@ -1,11 +1,12 @@
 import { TCountry } from "@/types/country";
 import Image from "next/image";
 import React from "react";
+import BorderCountries from "./BorderCountries";
 import CountryField from "./CountryField";
 
 export default function Country(props: TCountry) {
   return (
-    <div className="mt-16 mx-auto md:flex justify-between">
+    <div className="mt-16 mx-auto md:flex justify-between overflow-y-auto overflow-x-hidden h-[calc(100vh-14rem)] scrollbar">
       <div className="relative w-80 h-[14.3125rem]">
         <Image className="rounded-md object-cover" src={props.flags.svg} alt={`flag of ${props.name}`} fill />
       </div>
@@ -23,7 +24,7 @@ export default function Country(props: TCountry) {
             <li>
               <CountryField label={"Population"}>
                 <span className="text-sm font-light text-neutral-300 dark:text-white">
-                  {props.population}
+                  {props.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                 </span>
               </CountryField>
             </li>
@@ -53,7 +54,13 @@ export default function Country(props: TCountry) {
             </li>
             <li>
               <CountryField label={"Currencies"}>
-                <span className="text-sm font-light text-neutral-300 dark:text-white">currencies</span>
+                <div>
+                  {props.currencies.map((cur, i) => (
+                    <span key={cur.name} className={`text-sm font-light text-neutral-300 dark:text-white`}>
+                      {i > 0 ? ", " : ""} {cur.name}
+                    </span>
+                  ))}
+                </div>
               </CountryField>
             </li>
             <li>
@@ -72,6 +79,7 @@ export default function Country(props: TCountry) {
             </li>
           </ul>
         </div>
+        {props.borders?.length ? <BorderCountries borders={props.borders} /> : null}
       </div>
     </div>
   );
