@@ -46,8 +46,8 @@ export default function Filter({ region, setRegion }: Props) {
           <li onClick={(e) => selectRegion(e, "Africa")} className="cursor-pointer">
             Africa
           </li>
-          <li onClick={(e) => selectRegion(e, "America")} className="mt-2 cursor-pointer">
-            America
+          <li onClick={(e) => selectRegion(e, "Americas")} className="mt-2 cursor-pointer">
+            Americas
           </li>
           <li onClick={(e) => selectRegion(e, "Asia")} className="mt-2 cursor-pointer">
             Asia
