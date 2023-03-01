@@ -35,7 +35,5 @@ export async function getAllNames() {
     };
   });
 
-  console.log(test);
-
   return test;
 }
