@@ -10,7 +10,7 @@ export default function Country(props: TCountry) {
       <div className="relative w-80 h-[14.3125rem] xl:w-[35rem] xl:h-[25.0625rem]">
         <Image
           className="rounded-md object-cover"
-          src={props.flags?.png}
+          src={props.flags?.svg}
           alt={`flag of ${props.name}`}
           fill
         />

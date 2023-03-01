@@ -88,7 +88,7 @@ export default function Home({ data }: Props) {
                     name={country.name}
                     population={country.population}
                     region={country.region}
-                    flag={country.flags?.png}
+                    flag={country.flags?.svg}
                   />
                 );
               })
