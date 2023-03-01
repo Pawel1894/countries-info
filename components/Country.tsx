@@ -6,11 +6,11 @@ import CountryField from "./CountryField";
 
 export default function Country(props: TCountry) {
   return (
-    <div className="mt-16 mx-auto md:flex gap-8 xl:gap-36 justify-between xl:items-center overflow-y-auto overflow-x-hidden h-[calc(100vh-14rem)] md:h-auto scrollbar">
+    <div className="mt-16 mx-auto md:grid md:grid-cols-2 gap-8 xl:gap-36  overflow-y-auto overflow-x-hidden h-[calc(100vh-14rem)] md:h-auto scrollbar">
       <div className="relative w-80 h-[14.3125rem] xl:w-[35rem] xl:h-[25.0625rem]">
         <Image className="rounded-md object-cover" src={props.flags.svg} alt={`flag of ${props.name}`} fill />
       </div>
-      <div className="mt-11 md:mt-0">
+      <div className="mt-11">
         <h1 className="font-extrabold text-neutral-300 dark:text-white text-[1.375rem] xl:text-3xl">
           {props.name}
         </h1>
