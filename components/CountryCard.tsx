@@ -24,7 +24,7 @@ export default function CountryCard({ flag, capital, name, population, region }:
         <h2 className="text-lg font-extrabold text-neutral-300 dark:text-white mb-4">{name}</h2>
         <CountryField label="Population">
           <span className="text-sm xl:text-base font-light text-neutral-300 dark:text-white">
-            {population}
+            {population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </span>
         </CountryField>
         <CountryField className={"mt-2"} label="Region">
