@@ -27,36 +27,34 @@ export default function Home({ data }: Props) {
   const debounceTerm = useDebounce(searchTerm, 500);
   const [isLoading, setIsLoading] = useState(false);
 
-  const filterCountries = useCallback(
-    async function (region: string | null, search: string) {
-      setIsLoading(true);
-      if (!region && !search) return;
+  async function filterCountries(region: string | null, search: string) {
+    if (!region && !search) {
+      setCountries(data);
+      return;
+    }
 
-      if (region) {
-        try {
-          const response = await getCountriesByRegion(region);
-          if (search) {
-            setCountries(filterCountriesByName(response, search));
-            setIsLoading(false);
-            return;
-          }
-
-          setCountries(response);
-        } catch (error) {}
-        setIsLoading(false);
-        return;
-      }
-
+    if (!region) {
       setCountries(filterCountriesByName(data, search));
-      setIsLoading(false);
-    },
-    [data]
-  );
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await getCountriesByRegion(region);
+      if (search) {
+        setCountries(filterCountriesByName(response, search));
+      } else {
+        setCountries(response);
+      }
+    } catch (error) {}
+
+    setIsLoading(false);
+  }
 
   useEffect(() => {
     if (!debounceTerm && !region) setCountries(data);
     else filterCountries(region, debounceTerm);
-  }, [debounceTerm, data, region, filterCountries]);
+  }, [debounceTerm, data, region]);
 
   function filterCountriesByName(items: TCountry[], search: string) {
     return items.filter((item) => item.name.toLowerCase().includes(search?.toLowerCase()));
