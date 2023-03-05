@@ -68,7 +68,7 @@ export default function Home({ data }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="pt-6 mb-8 px-4 mx-auto lg:flex justify-between items-center max-w-[79.875rem]">
+      <div className="pt-6 mb-8 px-4 mx-auto lg:flex justify-between items-center max-w-[88rem]">
         <SearchCountry searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <Filter region={region} setRegion={setRegion} />
       </div>

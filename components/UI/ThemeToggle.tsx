@@ -28,7 +28,7 @@ export default function ThemeToggle() {
   return (
     <button className="flex items-center gap-x-[0.625rem]" onClick={toggleTheme}>
       <FontAwesomeIcon className="w-4 text-neutral-300 dark:text-white" icon={faMoon} />
-      <span className="text-neutral-300 dark:text-white text-xs font-semibold">Dark Mode</span>
+      <span className="text-neutral-300 dark:text-white text-xs md:text-sm font-semibold">Dark Mode</span>
     </button>
   );
 }
