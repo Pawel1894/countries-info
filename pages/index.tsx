@@ -28,7 +28,7 @@ export default function Home({ data }: Props) {
   const [isLoading, setIsLoading] = useState(false);
 
   const filterCountries = useCallback(
-    async function filterCountries(region: string | null, search: string) {
+    async function (region: string | null, search: string) {
       setIsLoading(true);
       if (!region && !search) return;
 
@@ -37,12 +37,13 @@ export default function Home({ data }: Props) {
           const response = await getCountriesByRegion(region);
           if (search) {
             setCountries(filterCountriesByName(response, search));
+            setIsLoading(false);
             return;
           }
 
           setCountries(response);
         } catch (error) {}
-
+        setIsLoading(false);
         return;
       }
 
