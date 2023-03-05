@@ -1,4 +1,4 @@
-# [Countires info](https://countries-info-pawel1894.vercel.app/)
+# [Countires info](https://countries-info-smoky.vercel.app)
 
 ## [Deigned by Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
@@ -21,7 +21,7 @@ My first next.js app! I wanted to explore basics of next.js with this simple app
 
 ### Website
 
-[App live demo](https://countries-info-pawel1894.vercel.app/)
+[App live demo](https://countries-info-smoky.vercel.app)
 
 ### Features
 
