@@ -47,6 +47,7 @@ export default function Home({ data }: Props) {
       }
 
       setCountries(filterCountriesByName(data, search));
+      setIsLoading(false);
     },
     [data]
   );
@@ -54,7 +55,6 @@ export default function Home({ data }: Props) {
   useEffect(() => {
     if (!debounceTerm && !region) setCountries(data);
     else filterCountries(region, debounceTerm);
-    setIsLoading(false);
   }, [debounceTerm, data, region, filterCountries]);
 
   function filterCountriesByName(items: TCountry[], search: string) {
